@@ -8,7 +8,7 @@ fi
 update-ca-certificates
 
 # shellcheck disable=SC2086
-cd / && ./single-file-artifact-gen \
+./single-file-artifact-gen \
   -n "$INPUT_ARTIFACT_NAME" \
   -t ${INPUT_DEVICE_TYPE// / -t } \
   -d "${INPUT_DESTINATION_DIRECTORY}" \
