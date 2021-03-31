@@ -40,4 +40,4 @@ branding:
 
 runs:
   using: docker
-  image: docker://ledsys/mender-io-deb-action:0.0.1
+  image: docker://ledsys/mender-io-single-file-action:0.0.1
