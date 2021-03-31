@@ -1,0 +1,43 @@
+name: "mender.io single-file action"
+description: "Build and publish mender.io file artifacts"
+author: "Steven Leadbeater <info@ledsysconsultancy.com>"
+inputs:
+  artifact_name:
+    description: 'Name of the artifact to deploy to mender'
+    required: true
+    default: '.'
+  device_type:
+    description: 'Device type for categorization of targets in mender'
+    required: true
+  destination_directory:
+    description: 'Location in target file system'
+    required: true
+    default: ''
+  file:
+    description: 'File to include in the artifact'
+    required: true
+    default: ''
+  server_address:
+    description: 'Address of the mender server to upload to'
+    required: true
+    default: 'https://hosted.mender.io'
+  username:
+    description: 'Username on the server specified in the server_address'
+    required: true
+    default: ''
+  password:
+    description: 'Password for the user on the server specified in the server_address'
+    required: true
+    default: ''
+  ca_certificate:
+    description: 'Certificate file for OS mender'
+    required: false
+    default: ''
+
+branding:
+  icon: "anchor"
+  color: "blue"
+
+runs:
+  using: docker
+  image: docker://ledsys/mender-io-deb-action:0.0.1
