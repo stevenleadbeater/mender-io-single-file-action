@@ -12,7 +12,7 @@ RUN add-apt-repository \
            stable \
            main"
 RUN apt-get update
-RUN apt-get install -y mender-artifact mender-cli
+RUN apt-get install -y mender-artifact mender-cli wget
 RUN wget https://raw.githubusercontent.com/mendersoftware/mender/master/support/modules-artifact-gen/single-file-artifact-gen
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
